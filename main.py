@@ -230,3 +230,31 @@ for index, row in netflix_movies_col_subset.iterrows():
     
 print(colors[0:10])
 print(colors)
+
+# Task 9 #
+"""
+Lovely looping! We now have a colors list that we can pass to our scatter plot, which should allow us to visually 
+inspect whether these genres might be responsible for the decline in the average duration of movies.
+
+This time, we'll also spruce up our plot with some additional axis labels and a new theme with plt.style.use().
+
+"""
+plt.style.use("ggplot")
+
+fig = plt.figure(figsize=(12,8))
+
+scatter_plot = fig.add_subplot(111)
+release_year = sorted(release_year, reverse=True)
+scatter_plot.scatter(release_year, duration, label="Movie Length",c=colors)
+scatter_plot.grid(True)
+scatter_plot.set_title("Scatter Plot")
+scatter_plot.set_xlabel("ReleaseYears")
+scatter_plot.set_yticks(y_scale)
+scatter_plot.set_ylabel("Duration" (min))
+scatter_plot.legend()
+
+plt.title("Movie Duration by Year of Release")
+plt.show()
+
+linebreak()
+
