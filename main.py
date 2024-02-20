@@ -198,3 +198,35 @@ print("Full Short Movies:", short_movies)
 
 linebreak()
 
+# Task 8 
+"""
+Interesting! It looks as though many of the films that are under 60 minutes fall into genres such as 
+"Action & Adventure", "Dramas", and "Documentaries". This is a logical result, as these types of films are probably 
+often shorter than  90 minute Hollywood blockbuster.
+
+We could eliminate these rows from our DataFrame and plot the values again. But another interesting way to explore the 
+effect of these genres on our data would be to plot them, but mark them with a different color.
+
+In Python, there are many ways to do this, but one fun way might be to use a loop to generate a list of colors based on 
+the contents of the genre column. We can then pass this list to our plotting function in a later step to color all 
+non-typical genres in a different color!
+"""
+colors = []
+
+for index, row in netflix_movies_col_subset.iterrows():
+    genre = row["genre"]
+    
+    if genre == "Children":
+        colors.append("red")
+        
+    elif genre == "Documentaries":
+       colors.append("blue")
+       
+    elif genre == "Stand-up":
+        colors.append("green")
+        
+    else:
+        colors.append("purple") 
+    
+print(colors[0:10])
+print(colors)
