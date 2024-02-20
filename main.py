@@ -179,3 +179,22 @@ plt.title("Movie Duration by Year of Release")
 plt.show()
 
 linebreak()
+
+# Task 7 #
+"""
+This is already much more informative than the simple plot we created when our friend first gave us some data. We can 
+also see that, while newer movies are overrepresented on the platform, many short movies have been released in the past 
+two decades.
+
+Upon further inspection, something else is going on. Some of these films are under an hour long! Let's filter our 
+DataFrame for movies with a duration under 60 minutes and look at the genres. This might give us some insight into what 
+is dragging down the average.
+"""
+netflix_movies_col_subset.loc[:, "duration"] = netflix_movies_col_subset["duration"].astype(int)
+short_movies = netflix_movies_col_subset[netflix_movies_col_subset["duration"] < 60]
+print(short_movies.iloc[0:20])
+linebreak_single()
+print("Full Short Movies:", short_movies)
+
+linebreak()
+
