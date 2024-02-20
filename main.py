@@ -116,3 +116,27 @@ netflix_df = pd.DataFrame(netflix_df)
 print(netflix_df.iloc[0:5])
 
 linebreak()
+
+# Task 5 # 
+"""
+Okay, we have our data! Now we can dive in and start looking at movie lengths.
+
+Or can we? Looking at the first five rows of our new DataFrame, we notice a column type. Scanning the column, it's clear
+ there are also TV shows in the dataset! Moreover, the duration column we planned to use seems to represent different 
+ values depending on whether the row is a movie or a show (perhaps the number of minutes versus the number of seasons)?
+
+Fortunately, a DataFrame allows us to filter data quickly, and we can select rows where type is Movie. While we're at 
+it, we don't need information from all of the columns, so let's create a new DataFrame netflix_movies containing only 
+title, country, genre, release_year, and duration.
+
+Let's put our data subsetting skills to work!
+"""
+netflix_df_movies_only = netflix_df[netflix_df["type"] == "Movie"]
+print(netflix_df_movies_only)
+
+linebreak_single()
+
+netflix_movies_col_subset = netflix_df_movies_only[["title","country","genre","release_year","duration"]]
+print(netflix_movies_col_subset.iloc[0:5])
+
+linebreak()
