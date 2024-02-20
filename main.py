@@ -94,3 +94,25 @@ plt.title("Netflix Movie Durations 2011-2020")
 plt.show()
 
 linebreak()
+
+
+# Task 4 #
+"""
+Well, it looks like there is something to the idea that movie lengths have decreased over the past ten years! But
+equipped only with our friend's aggregations, we're limited in the further explorations we can perform. There are a few
+questions about this trend that we are currently unable to answer, including:
+
+    1. What does this trend look like over a longer period of time?
+    2. Is this explainable by something like the genre of entertainment?
+
+Upon asking our friend for the original CSV they used to perform their analyses, they gladly oblige and send it. We now 
+have access to the CSV file, available at the path "datasets/netflix_data.csv". Let's create another DataFrame, this 
+time with all of the data. Given the length of our friend's data, printing the whole DataFrame is probably not a good 
+idea, so we will inspect it by printing only the first five rows.
+"""
+
+netflix_df = pd.read_csv("netflix_data.csv")
+netflix_df = pd.DataFrame(netflix_df)
+print(netflix_df.iloc[0:5])
+
+linebreak()
