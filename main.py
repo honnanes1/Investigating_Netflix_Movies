@@ -64,3 +64,33 @@ print("Durations DataFrame: \n")
 print(durations_df)
 
 linebreak()
+
+# Task 3 #
+"""
+Alright, we now have a pandas DataFrame, the most common way to work with tabular data in Python. Now back to the task
+at hand. We want to follow up on our friend's assertion that movie lengths have been decreasing over time. A great place
+to start will be a visualization of the data. Given that the data is continuous, a line plot would be a good choice,
+with the dates represented along the x-axis and the average length in minutes along the y-axis. This will allow us to
+easily spot any trends in movie durations. There are many ways to visualize data in Python, but matplotlib.pyplot is one
+ of the most common packages to do so.
+
+Note: In order for us to correctly test your plot, you will need to initialize a matplotlib.pyplot Figure object. 
+You can continue to create your plot as you have learned in Intermediate Python.
+"""
+
+fig = plt.figure(figsize=(10, 10))
+
+line_plot = fig.add_subplot(111)
+
+line_plot.plot(years, durations, label="movie length")
+line_plot.scatter(years, durations)
+line_plot.grid(True)
+line_plot.set_title("Line Plot")
+line_plot.set_xlabel("Release Years")
+line_plot.set_ylabel("Durations")
+line_plot.legend()
+
+plt.title("Netflix Movie Durations 2011-2020")
+plt.show()
+
+linebreak()
