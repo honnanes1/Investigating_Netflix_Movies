@@ -140,3 +140,42 @@ netflix_movies_col_subset = netflix_df_movies_only[["title","country","genre","r
 print(netflix_movies_col_subset.iloc[0:5])
 
 linebreak()
+
+
+# Task 6 #
+"""
+Okay, now we're getting somewhere. We've read in the raw data, selected rows of movies, and have limited our DataFrame 
+to our columns of interest. Let's try visualizing the data again to inspect the data over a longer range of time.
+
+This time, we are no longer working with aggregates but instead with individual movies. A line plot is no longer a good
+choice for our data, so let's try a scatter plot instead. We will again plot the year of release on the x-axis and the
+movie duration on the y-axis.
+"""
+release_year = netflix_movies_col_subset["release_year"].tolist()
+# release_year = sorted(release_year, reverse=True)
+# release_year = sorted(release_year, reverse=False)
+print(release_year)
+
+duration = netflix_movies_col_subset["duration".tolist()]
+duration = sorted(duration, reverse=True)
+# duration = sorted(duration, reverse=False)
+print(duration)
+
+plt.style.use("ggplot")
+fig = plt.figure(figsize=(12,8))
+
+scatter_plot = fig.add_subplot(111)
+
+scatter_plot.scatter(release_year, duration, label="Movie Length",c="green")
+scatter_plot.grid(True)
+scatter_plot.set_title("Scatter Plot")
+scatter_plot.set_xlabel("Release Years")
+scatter_plot.set_yticks(y_scale)
+scatter_plot.set_ylabel("Durations (min)")
+scatter_plot.legend()
+
+plt.title("Movie Duration by Year of Release")
+
+plt.show()
+
+linebreak()
