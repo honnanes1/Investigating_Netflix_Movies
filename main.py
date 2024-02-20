@@ -51,3 +51,16 @@ movie_dict = {"years": years,
 print("Movies:", movie_dict)
 
 linebreak()
+
+
+# Task 2 # 
+"""
+To convert our dictionary movie_dict to a pandas DataFrame, we will first need to import the library under its usual 
+alias. We'll also want to inspect our DataFrame to ensure it was created correctly.
+"""
+
+durations_df = pd.DataFrame(movie_dict)
+print("Durations DataFrame: \n")
+print(durations_df)
+
+linebreak()
